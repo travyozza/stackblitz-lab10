@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import  { Course }  from './course.interface';
+import { COURSES } from '../test-course';
 
 @Component({
   selector: 'app-courses',
@@ -14,4 +15,13 @@ export class CoursesComponent {
     period: 'Wednesday 4-6pm',
     lecturer: 'Dr. Jian Yu',
   };
+
+  courses = COURSES;
+
+  selectedCourse?: Course;
+
+  onSelect(course: Course): void {
+    this.selectedCourse = course;
+  }
+  
 }
